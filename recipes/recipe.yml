@@ -19,9 +19,9 @@ modules:
 
   - type: dnf
     repos:
-        - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
-      copr:
-        - ronnypfannschmidt/howdy-beta
+      - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
+    copr:
+      - ronnypfannschmidt/howdy-beta
     install:
       packages:
         - howdy
@@ -60,8 +60,8 @@ modules:
           - io.github.ilya_zlobintsev.LACT
           - io.github.celluloid_player.Celluloid
           - com.qq.QQ
-	  - com.tencent.WeChat
-      	  - com.bitwarden.desktop
+          - com.tencent.WeChat
+          - com.bitwarden.desktop
           - com.discordapp.Discord
           - io.github.pol_rivero.github-desktop-plus
         remove:  
