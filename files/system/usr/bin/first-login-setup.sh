@@ -5,8 +5,11 @@ set -e
 echo "开始首次登录设置..."
 
 # 安装 cosign
-echo "安装 cosign..."
-brew install cosign
+echo "设置 homebrew 应用..."
+brew install \
+     cosign \
+     wasmer \
+     gh \
 
 # 安装 Zed
 echo "安装 Zed..."
