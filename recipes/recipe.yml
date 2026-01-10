@@ -28,21 +28,20 @@ modules:
         - howdy
         - howdy-gtk
         - vivaldi-stable
-#   remove:
-#     packages:
-#       -
+  #   remove:
+  #     packages:
+  #       -
 
   - type: script
     snippets:
       - dnf install -y $(curl -s https://api.github.com/repos/mihomo-party-org/clash-party/releases/latest | grep -o 'https://[^"]*clash-party-linux-[^"]*-x86_64\.rpm' | head -n1)
       - dnf clean all
       - rm -rf /var/cache/dnf/* /var/cache/yum/* /tmp/* /var/tmp/* /var/lib/dnf/history
-      
-  - type: brew
-    nofile-limits: true # increase nofile limits
-    brew-analytics: false # disable telemetry
-      - cosign
-  
+
+  - type: script
+    snippets:
+      - brew install cosign
+
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
@@ -64,13 +63,13 @@ modules:
           - com.bitwarden.desktop
           - com.discordapp.Discord
           - io.github.pol_rivero.github-desktop-plus
-        remove:  
+        remove:
           - org.mozilla.firefox
           - org.gnome.Loupe
           - org.altlinux.Tuner
           - io.github.flattool.Warehouse
       - scope: user # Also add Flathub user repo, but no user packages
-      
+
   - type: initramfs
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
