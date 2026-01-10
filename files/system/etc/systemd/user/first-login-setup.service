@@ -1,0 +1,12 @@
+[Unit]
+Description=First login setup for user applications
+ConditionPathExists=!/var/home/%u/.config/first-login-done
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/first-login-setup.sh
+ExecStartPost=/usr/bin/touch /var/home/%u/.config/first-login-done
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
