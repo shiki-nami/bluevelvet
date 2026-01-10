@@ -33,13 +33,11 @@ modules:
   #       -
 
   - type: script
-    snippet: |
-      dnf install -y $(curl -s https://api.github.com/repos/mihomo-party-org/clash-party/releases/latest | grep -o 'https://[^"]*clash-party-linux-[^"]*-x86_64\.rpm' | head -n1)
-      dnf clean all
-      rm -rf /var/cache/dnf/* /var/cache/yum/* /tmp/* /var/tmp/* /var/lib/dnf/history
+    scripts:
+      - clash-party.sh
 
   - type: script
-    scripts:
+    snippets:
       - brew install cosign
       - curl -f https://zed.dev/install.sh | sh
       - curl -fsSL https://claude.ai/install.sh | bash
@@ -50,7 +48,6 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - re.sonny.Commit
           - page.tesk.Refine
           - app.fotema.Fotema
           - com.gopeed.Gopeed
@@ -67,6 +64,8 @@ modules:
           - io.github.pol_rivero.github-desktop-plus
         remove:
           - org.mozilla.firefox
+          - org.gnome.Showtime
+          - org.gnome.TextEditor
           - org.gnome.Loupe
           - org.altlinux.Tuner
           - io.github.flattool.Warehouse
