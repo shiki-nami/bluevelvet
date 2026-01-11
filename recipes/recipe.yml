@@ -63,7 +63,7 @@ modules:
           - org.gnome.Loupe
           - org.altlinux.Tuner
           - io.github.flattool.Warehouse
-      - scope: user # Also add Flathub user repo, but no user packages
+  #    - scope: user # Also add Flathub user repo, but no user packages
 
   - type: systemd
     user:
