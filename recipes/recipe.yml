@@ -37,7 +37,6 @@ modules:
   - type: script
     scripts:
       - install-rpm.sh
-      - install-user.sh
 
   - type: default-flatpaks
     configurations:
