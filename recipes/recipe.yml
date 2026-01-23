@@ -48,6 +48,7 @@ modules:
           - app.fotema.Fotema
           - com.gopeed.Gopeed
           - it.mijorus.gearlever
+          - org.gnome.Fractal
           - org.gnome.World.PikaBackup
           - org.localsend.localsend_app
           - io.github.flattool.Ignition
