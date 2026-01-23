@@ -19,11 +19,6 @@ modules:
 
   - type: initramfs
 
-  - type: systemd
-    user:
-      enabled:
-        - first-login-setup.service
-
   - type: dnf
     repos:
       files:
