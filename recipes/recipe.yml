@@ -36,7 +36,7 @@ modules:
 
   - type: script
     scripts:
-      - install-rpm.sh # example: run files/scripts/myscript.sh
+      - install-rpm.sh
 
   - type: default-flatpaks
     configurations:
@@ -52,6 +52,7 @@ modules:
           - org.gnome.World.PikaBackup
           - org.localsend.localsend_app
           - io.github.flattool.Ignition
+          - io.github.Foldex.AdwSteamGtk
           - io.github.ilya_zlobintsev.LACT
           - io.github.celluloid_player.Celluloid
           - com.qq.QQ
