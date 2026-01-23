@@ -30,11 +30,13 @@ modules:
         - howdy
         - howdy-gtk
         - vivaldi-stable
-      files:
-        - https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.1/clash-party-linux-1.9.1-x86_64.rpm
   #   remove:
   #     packages:
   #       -
+
+  - type: script
+    scripts:
+      - install-rpm.sh # example: run files/scripts/myscript.sh
 
   - type: default-flatpaks
     configurations:
