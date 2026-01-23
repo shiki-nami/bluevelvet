@@ -19,6 +19,11 @@ modules:
 
   - type: initramfs
 
+  - type: files
+    files:
+      - source: justfile
+        destination: /usr/share/ublue-os/just/60-custom.just
+
   - type: dnf
     repos:
       files:
@@ -57,7 +62,6 @@ modules:
           - io.github.celluloid_player.Celluloid
           - com.qq.QQ
           - com.tencent.WeChat
-          - com.bitwarden.desktop
           - io.github.milkshiift.GoofCord
           - io.github.pol_rivero.github-desktop-plus
         remove:
