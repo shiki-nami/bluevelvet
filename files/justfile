@@ -1,5 +1,5 @@
 # 安装用户软件
-install-user:
+setup-apps:
     #!/usr/bin/env bash
     set -euo pipefail
     echo "开始安装用户软件..."
@@ -15,7 +15,19 @@ install-user:
     # 通过脚本安装
     curl -f https://zed.dev/install.sh | sh
 
+    # 通过AppImage安装
+    GL="flatpak run it.miosemante.gearlever"
+    APPS=(
+        "https://github.com/imsyy/SPlayer/releases/download/v3.0.0-beta.8.2025/splayer-3.0.0-beta.8-x86_64.AppImage"
+    )
+    for url in "${APPS[@]}"; do \
+        file="/tmp/${url##*/}"; \
+        curl -Lc- "$url" -o "$file"; \
+        chmod +x "$file"; \
+        $GL --install "$file"; \
+    done
+
     mkdir -p "$HOME/.config"
-    touch "$HOME/.config/user-installed"
+    touch "$HOME/.config/apps-setup"
 
     echo "所有用户软件安装完成！"
