@@ -17,8 +17,6 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
-  - type: initramfs
-
   - type: files
     files:
       - source: justfile
@@ -59,11 +57,14 @@ modules:
           - io.github.celluloid_player.Celluloid
           - com.qq.QQ
           - com.tencent.WeChat
+          - com.bitwarden.desktop
           - io.github.milkshiift.GoofCord
           - io.github.pol_rivero.github-desktop-plus
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
   #    - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: initramfs
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
