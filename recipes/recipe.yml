@@ -28,11 +28,17 @@ modules:
         - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
       copr:
         - ronnypfannschmidt/howdy-beta
+        - mozixun/OpenAtom-Linyaps
     install:
       packages:
         - howdy
         - howdy-gtk
         - vivaldi-stable
+        - linglong
+        - linglong-bin
+        - linglong-builder
+        - linglong-pica
+        - linyaps-web-store-installer
         - https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.1/clash-party-linux-1.9.1-x86_64.rpm
   # remove:
   #   packages:
