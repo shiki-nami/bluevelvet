@@ -21,10 +21,10 @@ modules:
     install:
       packages:
         - uxplay
-        - clash-meta
         - howdy
         - howdy-gtk
         - vivaldi-stable
+        - https://github.com/xishang0128/sparkle/releases/download/1.6.16/sparkle-linux-1.6.16-x86_64.rpm
   # remove:
   #   packages:
   #     -
