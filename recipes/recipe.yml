@@ -56,7 +56,7 @@ modules:
 
   - type: gnome-extensions
     install:
-      - uxplay-control@xxanqw
+      - UXPlay Control
 
   - type: files
     files:
