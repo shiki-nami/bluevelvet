@@ -58,9 +58,6 @@ modules:
           - io.github.celluloid_player.Celluloid
           - com.qq.QQ
           - com.tencent.WeChat
-          - com.bitwarden.desktop
-          - org.equicord.equibop
-          - io.github.pol_rivero.github-desktop-plus
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner

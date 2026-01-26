@@ -27,6 +27,11 @@ setup-apps:
         $GL --install "$file"; \
     done
 
+    flatpak install -y \
+            org.equicord.equibop \
+            com.bitwarden.desktop \
+            io.github.pol_rivero.github-desktop-plus \
+
     mkdir -p "$HOME/.config"
     touch "$HOME/.config/apps-setup"
 
