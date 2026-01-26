@@ -18,13 +18,12 @@ modules:
         - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
       copr:
         - ronnypfannschmidt/howdy-beta
-        - kotone/clash-verge
     install:
       packages:
         - uxplay
+        - clash-meta
         - howdy
         - howdy-gtk
-        - clash-verge
         - vivaldi-stable
   # remove:
   #   packages:

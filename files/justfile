@@ -32,6 +32,7 @@ setup-apps:
             com.qq.QQ \
             com.tencent.WeChat \
             com.bitwarden.desktop \
+            com.heroicgameslauncher.hgl \
             org.equicord.equibop \
             io.github.pol_rivero.github-desktop-plus \
 
