@@ -27,9 +27,12 @@ setup-apps:
         $GL --install "$file"; \
     done
 
+    # 通过Flatpak安装
     flatpak install -y \
-            org.equicord.equibop \
+            com.qq.QQ \
+            com.tencent.WeChat \
             com.bitwarden.desktop \
+            org.equicord.equibop \
             io.github.pol_rivero.github-desktop-plus \
 
     mkdir -p "$HOME/.config"

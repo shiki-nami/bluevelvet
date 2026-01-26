@@ -12,28 +12,20 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: files
-    files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-
-  - type: files
-    files:
-      - source: justfile
-        destination: /usr/share/ublue-os/just/60-custom.just
-
   - type: dnf
     repos:
       files:
         - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
       copr:
         - ronnypfannschmidt/howdy-beta
+        - kotone/clash-verge
     install:
       packages:
+        - uxplay
         - howdy
         - howdy-gtk
+        - clash-verge
         - vivaldi-stable
-        - https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.1/clash-party-linux-1.9.1-x86_64.rpm
   # remove:
   #   packages:
   #     -
@@ -54,14 +46,24 @@ modules:
           - org.localsend.localsend_app
           - io.github.flattool.Ignition
           - io.github.Foldex.AdwSteamGtk
+          - io.github.IshuSinghSE.aurynk
           - io.github.ilya_zlobintsev.LACT
           - io.github.celluloid_player.Celluloid
-          - com.qq.QQ
-          - com.tencent.WeChat
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
   #    - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: gnome-extensions
+    install:
+      - UXPlay Control
+
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+      - source: justfile
+        destination: /usr/share/ublue-os/just/60-custom.just
 
   - type: initramfs
 
