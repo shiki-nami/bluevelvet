@@ -10,7 +10,7 @@ setup-apps:
          cosign \
          wasmer \
          xlsclients \
-         claude-code
+         claude-code \
 
     # 通过脚本安装
     curl -f https://zed.dev/install.sh | sh
