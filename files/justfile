@@ -8,6 +8,7 @@ setup-apps:
     brew install \
          go \
          rust \
+         yazi \
          cosign \
          wasmer \
          lazygit \

@@ -12,22 +12,35 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  # 添加Vivaldi仓库
+  - type: files
+    files:
+      - src: config/repos/vivaldi-fedora.repo
+        dst: /etc/yum.repos.d/vivaldi-fedora.repo
+
+  # 人脸识别 - 体积最大且最稳定，放最前
   - type: dnf
     repos:
-      files:
-        - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
       copr:
         - ronnypfannschmidt/howdy-beta
     install:
       packages:
-        - uxplay
         - howdy
         - howdy-gtk
-        - vivaldi-stable
-  # remove:
-  #   packages:
-  #     -
 
+  # 浏览器 - 体积中等，更新频繁，放中间
+  - type: dnf
+    install:
+      packages:
+        - vivaldi-stable
+
+  # 轻量级工具 - 体积最小，放最后
+  - type: dnf
+    install:
+      packages:
+        - uxplay
+
+  # 默认Flatpak清单，只影响LiveISO体积，不影响更新体积
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
