@@ -13,7 +13,7 @@ setup-apps:
          claude-code \
 
     # 通过脚本安装
-    curl -f https://zed.dev/install.sh | sh
+    curl -fsSL https://zed.dev/install.sh | sh
 
     # 通过AppImage安装
     GL="flatpak run it.miosemante.gearlever"
@@ -22,7 +22,7 @@ setup-apps:
     )
     for url in "${APPS[@]}"; do \
         file="/tmp/${url##*/}"; \
-        curl -Lc- "$url" -o "$file"; \
+        curl -LC- "$url" -o "$file"; \
         chmod +x "$file"; \
         $GL --install "$file"; \
     done
@@ -40,3 +40,36 @@ setup-apps:
     touch "$HOME/.config/apps-setup"
 
     echo "所有用户软件安装完成！"
+
+# 安装并配置 mihomo (Clash Meta)
+setup-mihomo:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    echo "正在安装 mihomo..."
+    brew install mihomo
+
+    echo "创建配置文件目录..."
+    mkdir -p "$HOME/.config/mihomo"
+
+    echo "配置 systemd 服务..."
+    mkdir -p "$HOME/.config/systemd/user"
+
+    MIHOMO_BIN="$(brew --prefix)/bin/mihomo"
+
+    cat <<EOF > "$HOME/.config/systemd/user/mihomo.service"
+[Unit]
+Description=mihomo Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=$MIHOMO_BIN -d %h/.config/mihomo
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+EOF
+
+    systemctl --user daemon-reload
+    systemctl --user enable --now mihomo.service
+    echo "mihomo 安装并已作为 systemd 服务启动。"
