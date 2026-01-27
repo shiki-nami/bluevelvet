@@ -12,18 +12,6 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  # 仓库
-  - type: files
-    files:
-      - source: vivaldi-fedora.repo
-        destination: /etc/yum.repos.d/vivaldi-fedora.repo
-
-  # 系统配置
-  - type: files
-    files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-
   # 字体
   - type: fonts
     fonts:
@@ -31,10 +19,11 @@ modules:
         - name: 更纱黑体
           url: https://github.com/be5invis/Sarasa-Gothic/releases/download/v1.0.36/Sarasa-SuperTTC-1.0.36.7z
 
-  # Gnome 扩展
-  - type: gnome-extensions
-    install:
-      - UXPlay Control
+  # 仓库
+  - type: files
+    files:
+      - source: vivaldi-fedora.repo
+        destination: /etc/yum.repos.d/vivaldi-fedora.repo
 
   # RPM 包
   - type: dnf
@@ -68,14 +57,27 @@ modules:
           - org.altlinux.Tuner
   #    - scope: user # Also add Flathub user repo, but no user packages
 
+  # Gnome 扩展
+  - type: gnome-extensions
+    install:
+      - UXPlay Control
+
+  # hid_apple.conf 需要
+  - type: kargs
+    kargs:
+      - hid_apple.fnmode=2
+
+  # 系统配置
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
   # just 脚本
   - type: files
     files:
       - source: justfile
         destination: /usr/share/ublue-os/just/60-custom.just
-
-  # hid_apple.conf 需要
-  - type: initramfs
 
   # 签名 OCI 镜像
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
