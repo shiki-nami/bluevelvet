@@ -12,35 +12,38 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  # 添加 Vivaldi 仓库
+  # 仓库
   - type: files
     files:
       - source: vivaldi-fedora.repo
         destination: /etc/yum.repos.d/vivaldi-fedora.repo
 
-  # 人脸识别 - 体积最大且最稳定，放最前
-  - type: dnf
-    repos:
-      copr:
-        - ronnypfannschmidt/howdy-beta
-    install:
-      packages:
-        - howdy
-        - howdy-gtk
+  # 系统配置
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
-  # 浏览器 - 体积中等，更新频繁，放中间
-  - type: dnf
-    install:
-      packages:
-        - vivaldi-stable
+  # 字体
+  - type: fonts
+    fonts:
+      url-fonts:
+        - name: 更纱黑体
+          url: https://github.com/be5invis/Sarasa-Gothic/releases/download/v1.0.36/Sarasa-SuperTTC-1.0.36.7z
 
-  # 轻量级工具 - 体积最小，放最后
+  # Gnome 扩展
+  - type: gnome-extensions
+    install:
+      - UXPlay Control
+
+  # RPM 包
   - type: dnf
     install:
       packages:
         - uxplay
+        - vivaldi-stable
 
-  # 默认Flatpak清单，只影响LiveISO体积，不影响更新体积
+  # 默认 Flatpak
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
@@ -65,21 +68,14 @@ modules:
           - org.altlinux.Tuner
   #    - scope: user # Also add Flathub user repo, but no user packages
 
-  # Gnome 扩展
-  - type: gnome-extensions
-    install:
-      - UXPlay Control
-
-  # 修改系统配置和添加 just 脚本
+  # just 脚本
   - type: files
     files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
       - source: justfile
         destination: /usr/share/ublue-os/just/60-custom.just
 
   # hid_apple.conf 需要
   - type: initramfs
 
-  # 签名OCI镜像
+  # 签名 OCI 镜像
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
