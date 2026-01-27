@@ -72,10 +72,6 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-
-  # just 脚本
-  - type: files
-    files:
       - source: justfile
         destination: /usr/share/ublue-os/just/60-custom.just
 
