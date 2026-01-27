@@ -12,11 +12,11 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  # 添加Vivaldi仓库
+  # 添加 Vivaldi 仓库
   - type: files
     files:
-      - src: config/repos/vivaldi-fedora.repo
-        dst: /etc/yum.repos.d/vivaldi-fedora.repo
+      - source: vivaldi-fedora.repo
+        destination: /etc/yum.repos.d/vivaldi-fedora.repo
 
   # 人脸识别 - 体积最大且最稳定，放最前
   - type: dnf
@@ -65,10 +65,12 @@ modules:
           - org.altlinux.Tuner
   #    - scope: user # Also add Flathub user repo, but no user packages
 
+  # Gnome 扩展
   - type: gnome-extensions
     install:
       - UXPlay Control
 
+  # 修改系统配置和添加 just 脚本
   - type: files
     files:
       - source: system
@@ -76,6 +78,8 @@ modules:
       - source: justfile
         destination: /usr/share/ublue-os/just/60-custom.just
 
+  # hid_apple.conf 需要
   - type: initramfs
 
+  # 签名OCI镜像
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
