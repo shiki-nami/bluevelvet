@@ -6,9 +6,11 @@ setup-apps:
 
     # 通过Homebrew安装
     brew install \
-         gh \
+         go \
+         rust \
          cosign \
          wasmer \
+         lazygit \
          xlsclients \
          claude-code \
 
@@ -34,7 +36,7 @@ setup-apps:
             com.bitwarden.desktop \
             com.heroicgameslauncher.hgl \
             org.equicord.equibop \
-            io.github.pol_rivero.github-desktop-plus \
+            io.podman_desktop.PodmanDesktop \
 
     mkdir -p "$HOME/.config"
     touch "$HOME/.config/apps-setup"
