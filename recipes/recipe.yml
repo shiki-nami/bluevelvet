@@ -24,7 +24,7 @@ modules:
         - howdy
         - howdy-gtk
         - vivaldi-stable
-        - https://github.com/xishang0128/sparkle/releases/download/1.6.16/sparkle-linux-1.6.16-x86_64.rpm
+        - https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.5/Clash.Verge-2.4.5-1.x86_64.rpm
   # remove:
   #   packages:
   #     -
