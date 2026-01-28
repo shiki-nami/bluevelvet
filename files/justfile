@@ -9,6 +9,7 @@ setup-apps:
          go \
          rust \
          yazi \
+         micro \
          cosign \
          wasmer \
          lazygit \
