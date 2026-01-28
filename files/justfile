@@ -60,7 +60,7 @@ setup-mihomo:
 
     MIHOMO_BIN="$(brew --prefix)/bin/mihomo"
 
-    cat <<'EOF' > "$HOME/.config/systemd/user/mihomo.service"
+    cat > "$HOME/.config/systemd/user/mihomo.service" <<EOF
 [Unit]
 Description=mihomo Service
 After=network.target
