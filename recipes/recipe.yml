@@ -55,6 +55,14 @@ modules:
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
+      - notify: true
+        scope: system
+        repo:
+          name: geforcenow
+          url: https://international.download.nvidia.com/GFNLinux/flatpak/geforcenow.flatpakrepo
+          title: "GeForce NOW Official"
+        install:
+          - com.nvidia.geforcenow
 
   # Gnome 扩展
   - type: gnome-extensions
