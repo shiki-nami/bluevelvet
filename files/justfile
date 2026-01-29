@@ -31,15 +31,6 @@ setup-apps:
         $GL --install "$file"; \
     done
 
-    # 通过Flatpak安装
-    flatpak install -y \
-            com.qq.QQ \
-            com.tencent.WeChat \
-            com.bitwarden.desktop \
-            com.heroicgameslauncher.hgl \
-            org.equicord.equibop \
-            io.podman_desktop.PodmanDesktop \
-
     mkdir -p "$HOME/.config"
     touch "$HOME/.config/apps-setup"
 
@@ -60,19 +51,19 @@ setup-mihomo:
 
     MIHOMO_BIN="$(brew --prefix)/bin/mihomo"
 
-    cat > "$HOME/.config/systemd/user/mihomo.service" <<'EOF'
-[Unit]
-Description=mihomo Service
-After=network.target
+    cat > "$HOME/.config/systemd/user/mihomo.service" << EOF
+    [Unit]
+    Description=mihomo Service
+    After=network.target
 
-[Service]
-Type=simple
-ExecStart=$MIHOMO_BIN -d %h/.config/mihomo
-Restart=on-failure
+    [Service]
+    Type=simple
+    ExecStart=$MIHOMO_BIN -d %h/.config/mihomo
+    Restart=on-failure
 
-[Install]
-WantedBy=default.target
-EOF
+    [Install]
+    WantedBy=default.target
+    EOF
 
     systemctl --user daemon-reload
     systemctl --user enable --now mihomo.service
