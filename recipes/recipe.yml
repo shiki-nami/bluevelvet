@@ -19,18 +19,11 @@ modules:
         - name: 更纱黑体
           url: https://github.com/be5invis/Sarasa-Gothic/releases/download/v1.0.36/Sarasa-SuperTTC-1.0.36.7z
 
-  # 仓库
-  - type: files
-    files:
-      - source: vivaldi-fedora.repo
-        destination: /etc/yum.repos.d/vivaldi-fedora.repo
-
   # RPM 包
   - type: dnf
     install:
       packages:
         - uxplay
-        - vivaldi-stable
 
   # 默认 Flatpak
   - type: default-flatpaks
@@ -52,17 +45,17 @@ modules:
           - io.github.IshuSinghSE.aurynk
           - io.github.ilya_zlobintsev.LACT
           - io.github.celluloid_player.Celluloid
+          - com.vivaldi.Vivaldi
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
-  #    - scope: user # Also add Flathub user repo, but no user packages
 
   # Gnome 扩展
   - type: gnome-extensions
     install:
       - UXPlay Control
 
-  # hid_apple.conf 需要
+  # 修复键盘F键
   - type: kargs
     kargs:
       - hid_apple.fnmode=2
