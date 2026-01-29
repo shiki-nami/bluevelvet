@@ -1,0 +1,10 @@
+[Unit]
+Description=Auto-install/update Brew packages from Brewfile
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/ublue-os/homebrew/install-brew.sh
+Restart=no
+
+[Install]
+WantedBy=default.target
