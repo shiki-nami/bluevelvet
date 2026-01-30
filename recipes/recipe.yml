@@ -64,10 +64,15 @@ modules:
         install:
           - com.nvidia.geforcenow
 
-  # 添加 Gnome 扩展
+  # 添加 GNOME 扩展
   - type: gnome-extensions
     install:
       - UXPlay Control
+
+  # 安装 GNOME 主题
+  - type: script
+    scripts:
+      - theme.sh
 
   # 注入内核参数
   - type: kargs
