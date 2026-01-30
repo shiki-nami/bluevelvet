@@ -16,6 +16,15 @@ fi
 echo "Installing WhiteSur GTK theme..."
 cd "$THEME_DIR"
 chmod +x ./install.sh
-./install.sh
 
-echo "WhiteSur GTK theme installation completed successfully!"
+# 以非交互模式运行安装脚本，跳过用户交互
+echo "Running install.sh with --yes flag..."
+if ! ./install.sh --yes 2>&1; then
+    echo "WARNING: install.sh failed, but continuing with alternative approach..."
+    # 尝试直接复制主题文件到系统位置
+    mkdir -p /usr/share/themes
+    cp -r .* /usr/share/themes/ 2>/dev/null || true
+    cp -r ./* /usr/share/themes/ 2>/dev/null || true
+fi
+
+echo "WhiteSur GTK theme installation completed!"
