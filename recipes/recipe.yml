@@ -33,6 +33,7 @@ modules:
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
           - page.tesk.Refine
+          - app.drey.Dialect
           - app.fotema.Fotema
           - com.gopeed.Gopeed
           - info.febvre.Komikku

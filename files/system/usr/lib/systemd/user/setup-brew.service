@@ -1,10 +1,14 @@
 [Unit]
 Description=Auto-install/update Brew packages from Brewfile
+After=network-online.target
+Wants=network-online.target
 
 [Service]
 Type=oneshot
+# 检测到任何活跃会话（SSH登录、本地登录、桌面登录均可）即触发
+ExecStartPre=/usr/bin/bash -c 'until loginctl --no-legend | grep -q "active"; do sleep 1; done'
 ExecStart=/usr/share/ublue-os/homebrew/install-brew.sh
 Restart=no
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target
