@@ -32,7 +32,8 @@ setup-mihomo:
 EOF
 
     # 使用 sed 删除每一行开头的空格或制表符，然后写入系统目录
-    sed 's/^[[:space:]]*//' '/tmp/mihomo.service' | sudo tee '/etc/systemd/system/mihomo.service' > /dev/null
+    sed 's/^[[:space:]]*//' '/tmp/mihomo.service' \
+        | sudo tee '/etc/systemd/system/mihomo.service' > /dev/null
     rm '/tmp/mihomo.service'
 
     sudo systemctl daemon-reload
