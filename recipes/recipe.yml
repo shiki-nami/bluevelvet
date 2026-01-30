@@ -45,6 +45,7 @@ modules:
           - io.github.Foldex.AdwSteamGtk
           - io.github.IshuSinghSE.aurynk
           - io.github.ilya_zlobintsev.LACT
+          - io.github.Faugus.faugus-launcher
           - io.github.celluloid_player.Celluloid
           - com.qq.QQ
           - com.tencent.WeChat
