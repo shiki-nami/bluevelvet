@@ -1,7 +1,7 @@
-# 安装并配置 mihomo (Clash Meta)
 setup-mihomo:
     #!/usr/bin/env bash
     set -euo pipefail
+
     echo "正在安装 mihomo..."
     brew install mihomo
 
@@ -9,24 +9,32 @@ setup-mihomo:
     mkdir -p "$HOME/.config/mihomo"
 
     echo "配置 systemd 服务..."
-    mkdir -p "$HOME/.config/systemd/user"
-
     MIHOMO_BIN="$(brew --prefix)/bin/mihomo"
 
-    cat > "$HOME/.config/systemd/user/mihomo.service" << EOF
+    # 提前赋予变量，避免$HOME解析为/root
+    CONFIG_DIR="$HOME/.config/mihomo"
+
+    # 1. 正常缩进编写，保证 just 解析正确
+    # 2. 写入临时文件，然后用 sed 删掉行首空格再移交给 sudo
+    cat > /tmp/mihomo.service << EOF
     [Unit]
     Description=mihomo Service
-    After=network.target
+    After=network-online.target
+    Wants=network-online.target
 
     [Service]
-    Type=simple
-    ExecStart=$MIHOMO_BIN -d %h/.config/mihomo
+    ExecStart=$MIHOMO_BIN -d $CONFIG_DIR
+    User=root
     Restart=on-failure
 
     [Install]
-    WantedBy=default.target
-    EOF
+    WantedBy=multi-user.target
+EOF
 
-    systemctl --user daemon-reload
-    systemctl --user enable --now mihomo.service
-    echo "mihomo 已安装并作为 systemd 服务启动。"
+    # 使用 sed 删除每一行开头的空格或制表符，然后写入系统目录
+    sed 's/^[[:space:]]*//' /tmp/mihomo.service | sudo tee /etc/systemd/system/mihomo.service > /dev/null
+    rm /tmp/mihomo.service
+
+    sudo systemctl daemon-reload
+    sudo systemctl enable --now mihomo.service
+    echo "mihomo 已安装并作为系统级服务启动。"

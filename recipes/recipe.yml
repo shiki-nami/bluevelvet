@@ -58,9 +58,9 @@ modules:
       - notify: true
         scope: system
         repo:
-          name: geforcenow
-          url: https://international.download.nvidia.com/GFNLinux/flatpak/geforcenow.flatpakrepo
-          title: "GeForce NOW Official"
+          name: GeForceNOW
+          title: "GeForce NOW 官方"
+          url: https://international.download.nvidia.com/GFNLinux/flatpak/geforcenow_repo
         install:
           - com.nvidia.geforcenow
 
