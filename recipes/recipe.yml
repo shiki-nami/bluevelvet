@@ -26,6 +26,7 @@ modules:
     install:
       packages:
         - uxplay
+        - ibus-rime
         - https://github.com/xishang0128/sparkle/releases/download/1.26.1/sparkle-linux-1.26.1-x86_64.rpm
 
   # 通过 Flatpak 安装
