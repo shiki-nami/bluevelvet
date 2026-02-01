@@ -89,12 +89,5 @@ modules:
       enabled:
         - setup-brew.service
 
-  # 添加 just 脚本
-  - type: justfiles
-    validate: true
-    install: true
-    include:
-      - bluevelvet.just
-
   # 签名 OCI 镜像
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
