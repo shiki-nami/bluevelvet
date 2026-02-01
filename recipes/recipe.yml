@@ -36,6 +36,7 @@ modules:
           - app.drey.Dialect
           - app.fotema.Fotema
           - com.gopeed.Gopeed
+          - com.github.marhkb.Pods
           - info.febvre.Komikku
           - it.mijorus.gearlever
           - org.gnome.Fractal
@@ -53,7 +54,6 @@ modules:
           - com.bitwarden.desktop
           - com.heroicgameslauncher.hgl
           - org.equicord.equibop
-          - io.podman_desktop.PodmanDesktop
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
