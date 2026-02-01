@@ -52,7 +52,6 @@ modules:
           - com.tencent.WeChat
           - com.vivaldi.Vivaldi
           - com.bitwarden.desktop
-          - com.heroicgameslauncher.hgl
           - org.equicord.equibop
         remove:
           - org.mozilla.firefox
