@@ -12,11 +12,14 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  # 注入内核参数
+  - type: kargs
+    kargs:
+      - hid_apple.fnmode=2
+
   # 添加字体
   - type: fonts
     fonts:
-      google-fonts:
-        - Inter Tight
       url-fonts:
         - name: 更纱黑体 UI SC
           url: https://github.com/be5invis/Sarasa-Gothic/releases/download/v1.0.36/SarasaUiSC-TTF-1.0.36.7z
@@ -73,11 +76,6 @@ modules:
   - type: gnome-extensions
     install:
       - UXPlay Control
-
-  # 注入内核参数
-  - type: kargs
-    kargs:
-      - hid_apple.fnmode=2
 
   # 添加系统配置
   - type: files
