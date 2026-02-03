@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""安装Brewfile并标记CRC32"""
+"""安装 Brewfile 并标记 CRC32"""
 
 import subprocess
 import sys
