@@ -1,2 +1,5 @@
+brew "uv"
+brew "scc"
+brew "ghcup"
 brew "wasmer"
 brew "xlsclients"

@@ -59,7 +59,6 @@ modules:
           - com.tencent.WeChat
           - com.vivaldi.Vivaldi
           - com.bitwarden.desktop
-          - org.equicord.equibop
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
