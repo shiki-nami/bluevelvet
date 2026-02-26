@@ -1,6 +1,5 @@
 brew "uv"
 brew "scc"
-brew "ghcup"
 brew "wasmer"
 brew "elan-init"
 brew "xlsclients"

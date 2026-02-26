@@ -52,6 +52,7 @@ modules:
           - com.gopeed.Gopeed
           - info.febvre.Komikku
           - it.mijorus.gearlever
+          - org.zotero.Zotero
           - org.gnome.Fractal
           - org.gnome.World.PikaBackup
           - org.localsend.localsend_app
@@ -65,17 +66,10 @@ modules:
           - com.tencent.WeChat
           - com.vivaldi.Vivaldi
           - com.bitwarden.desktop
+          - com.sidevesh.Luminance
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
-      - notify: true
-        scope: system
-        repo:
-          name: GeForceNOW
-          title: "GeForce NOW 官方"
-          url: https://international.download.nvidia.com/GFNLinux/flatpak/geforcenow_repo
-        install:
-          - com.nvidia.geforcenow
 
   # 添加 GNOME 扩展
   - type: gnome-extensions
