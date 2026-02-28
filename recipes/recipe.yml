@@ -62,9 +62,9 @@ modules:
           - io.github.ilya_zlobintsev.LACT
           - io.github.Faugus.faugus-launcher
           - io.github.celluloid_player.Celluloid
+          - app.zen_browser.zen
           - com.qq.QQ
           - com.tencent.WeChat
-          - com.vivaldi.Vivaldi
           - com.bitwarden.desktop
           - com.sidevesh.Luminance
         remove:
