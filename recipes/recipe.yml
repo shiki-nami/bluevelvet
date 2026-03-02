@@ -38,7 +38,6 @@ modules:
         - uxplay
         - ibus-rime
         - https://github.com/xishang0128/sparkle/releases/download/1.26.2/sparkle-linux-1.26.2-x86_64.rpm
-        - https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.6/Clash.Verge-2.4.6-1.x86_64.rpm
 
   # 通过 Flatpak 安装
   - type: default-flatpaks
@@ -64,10 +63,9 @@ modules:
           - io.github.Faugus.faugus-launcher
           - io.github.celluloid_player.Celluloid
           - app.zen_browser.zen
-          - com.qq.QQ
-          - com.tencent.WeChat
           - com.bitwarden.desktop
           - com.sidevesh.Luminance
+          - net.trowell.typesetter
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
