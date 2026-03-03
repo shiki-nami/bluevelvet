@@ -49,7 +49,6 @@ modules:
           - cool.ldr.lfy
           - page.tesk.Refine
           - app.fotema.Fotema
-          - com.gopeed.Gopeed
           - info.febvre.Komikku
           - it.mijorus.gearlever
           - org.zotero.Zotero
@@ -62,10 +61,12 @@ modules:
           - io.github.ilya_zlobintsev.LACT
           - io.github.Faugus.faugus-launcher
           - io.github.celluloid_player.Celluloid
+          - io.github.giantpinkrobots.varia
           - app.zen_browser.zen
           - com.bitwarden.desktop
           - com.sidevesh.Luminance
           - net.trowell.typesetter
+          - org.qbittorrent.qBittorrent
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
