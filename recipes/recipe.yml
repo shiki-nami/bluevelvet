@@ -52,6 +52,7 @@ modules:
           - info.febvre.Komikku
           - it.mijorus.gearlever
           - org.zotero.Zotero
+          - org.gnome.Maps
           - org.gnome.Fractal
           - org.gnome.World.PikaBackup
           - org.localsend.localsend_app
@@ -67,6 +68,9 @@ modules:
           - com.sidevesh.Luminance
           - net.trowell.typesetter
           - org.qbittorrent.qBittorrent
+          - com.github.wwmm.easyeffects
+          - io.github.totoshko88.RustConn
+          - re.sonny.Tangram
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
