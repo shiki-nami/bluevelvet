@@ -37,8 +37,8 @@ modules:
         - Cider
         - uxplay
         - ibus-rime
+        - google-chrome-stable
         - https://github.com/xishang0128/sparkle/releases/download/1.26.2/sparkle-linux-1.26.2-x86_64.rpm
-        - https://github.com/RobRich999/Chromium_Clang/releases/download/v147.0.7685.0-r1584191-linux64-rpm-avx2/chromium-browser-unstable-147.0.7685.0-1.x86_64.rpm
 
   # 通过 Flatpak 安装
   - type: default-flatpaks
