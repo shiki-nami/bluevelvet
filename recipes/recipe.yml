@@ -47,7 +47,7 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - cool.ldr.lfy
+          - app.drey.Dialect
           - page.tesk.Refine
           - app.fotema.Fotema
           - info.febvre.Komikku
@@ -64,7 +64,6 @@ modules:
           - io.github.Faugus.faugus-launcher
           - io.github.celluloid_player.Celluloid
           - io.github.giantpinkrobots.varia
-          - app.zen_browser.zen
           - com.bitwarden.desktop
           - com.sidevesh.Luminance
           - net.trowell.typesetter
@@ -72,6 +71,7 @@ modules:
           - com.github.wwmm.easyeffects
           - io.github.totoshko88.RustConn
           - re.sonny.Tangram
+          - org.gnome.World.Secrets
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
