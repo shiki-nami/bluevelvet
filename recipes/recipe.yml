@@ -72,6 +72,7 @@ modules:
           - io.github.totoshko88.RustConn
           - re.sonny.Tangram
           - com.github.johnfactotum.Foliate
+          - net.shadps4.shadPS4
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
