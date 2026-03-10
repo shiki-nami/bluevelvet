@@ -62,8 +62,8 @@ modules:
           - io.github.IshuSinghSE.aurynk
           - io.github.ilya_zlobintsev.LACT
           - io.github.Faugus.faugus-launcher
-          - io.github.celluloid_player.Celluloid
-          - io.github.giantpinkrobots.varia
+          - io.mpv.Mpv
+          - com.gopeed.Gopeed
           - com.bitwarden.desktop
           - com.sidevesh.Luminance
           - net.trowell.typesetter
@@ -71,7 +71,7 @@ modules:
           - com.github.wwmm.easyeffects
           - io.github.totoshko88.RustConn
           - re.sonny.Tangram
-          - org.gnome.World.Secrets
+          - com.github.johnfactotum.Foliate
         remove:
           - org.mozilla.firefox
           - org.altlinux.Tuner
