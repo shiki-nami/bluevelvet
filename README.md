@@ -1,43 +1,34 @@
-# bluevelvet &nbsp; [![bluebuild build badge](https://github.com/shiki-nami/bluevelvet/actions/workflows/build.yml/badge.svg)](https://github.com/shiki-nami/bluevelvet/actions/workflows/build.yml)
+bluevelvet   
+请参阅 BlueBuild 文档，获取基于此模板创建自定义镜像仓库的快速设置说明。
+完成设置后，建议更新此 README 以描述你的自定义镜像。
+安装
+[!WARNING]
+这是一项实验性功能，请谨慎使用。
+将现有的 Fedora Atomic 安装变基到最新构建：
+	•	首先变基到未签名镜像，以安装正确的签名密钥和策略：
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/shiki-nami/bluevelvet:latest
 
-After setup, it is recommended you update this README to describe your custom image.
 
-## Installation
+	•	重启以完成变基：
 
-> [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+systemctl reboot
 
-To rebase an existing atomic Fedora installation to the latest build:
 
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/shiki-nami/bluevelvet:latest
-  ```
-- Reboot to complete the rebase:
-  ```
-  systemctl reboot
-  ```
-- Then rebase to the signed image, like so:
-  ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/shiki-nami/bluevelvet:latest
-  ```
-- Reboot again to complete the installation
-  ```
-  systemctl reboot
-  ```
+	•	然后变基到已签名镜像：
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/shiki-nami/bluevelvet:latest
 
-## ISO
 
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+	•	再次重启以完成安装：
 
-## Verification
+systemctl reboot
 
-These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
 
-```bash
+latest 标签将自动指向最新构建。该构建将始终使用 recipe.yml 中指定的 Fedora 版本，因此不会意外升级到下一个主要版本。
+ISO
+如果在 Fedora Atomic 上构建，可以按照此处的说明生成离线 ISO。由于文件体积较大，这些 ISO 无法免费分发到 GitHub，公开项目需要使用其他托管方式。
+验证
+这些镜像使用 Sigstore 的 cosign 进行签名。你可以从本仓库下载 cosign.pub 文件，并运行以下命令验证签名：
+
 cosign verify --key cosign.pub ghcr.io/shiki-nami/bluevelvet
-```
