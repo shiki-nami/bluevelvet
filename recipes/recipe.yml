@@ -6,7 +6,7 @@ name: bluevelvet
 description: 这是我的个人系统映像
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-deck-nvidia-gnome
+base-image: ghcr.io/ublue-os/bazzite-gnome-nvidia-open
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -71,8 +71,6 @@ modules:
           - re.sonny.Tangram
           - com.github.johnfactotum.Foliate
           - net.shadps4.shadPS4
-        remove:
-          - org.altlinux.Tuner
 
   # 添加 GNOME 扩展
   - type: gnome-extensions
