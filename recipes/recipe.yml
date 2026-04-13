@@ -36,7 +36,6 @@ modules:
       packages:
         - uxplay
         - ibus-rime
-        - google-chrome-stable
         - https://github.com/xishang0128/sparkle/releases/download/1.26.3/sparkle-linux-1.26.3-x86_64.rpm
 
   # 通过 Flatpak 安装
@@ -73,7 +72,6 @@ modules:
           - com.github.johnfactotum.Foliate
           - net.shadps4.shadPS4
         remove:
-          - org.mozilla.firefox
           - org.altlinux.Tuner
 
   # 添加 GNOME 扩展
