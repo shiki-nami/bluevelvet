@@ -6,7 +6,7 @@ name: bluevelvet
 description: 这是我的个人系统映像
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-gnome-nvidia-open
+base-image: ghcr.io/ublue-os/bazzite-deck-nvidia-gnome
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -22,6 +22,8 @@ modules:
   - type: kargs
     kargs:
       - hid_apple.fnmode=2
+      - systemd.zram=0
+      - zswap.enabled=1
 
   # 添加字体
   - type: fonts
