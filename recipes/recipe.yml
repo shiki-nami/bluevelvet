@@ -46,7 +46,10 @@ modules:
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
         scope: system
-        # If no repo information is specified, Flathub will be used by default
+        repo:
+          title: flathub
+          name: Flathub 中科大镜像
+          url: https://mirrors.ustc.edu.cn/flathub
         install: # system flatpaks we want all users to have and not remove
           - app.drey.Dialect
           - app.fotema.Fotema
