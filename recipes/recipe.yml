@@ -47,8 +47,7 @@ modules:
       - notify: true # Send notification after install/uninstall is finished (true/false)
         scope: system
         repo:
-          title: flathub
-          name: Flathub 中科大镜像
+          name: flathub
           url: https://mirrors.ustc.edu.cn/flathub
         install: # system flatpaks we want all users to have and not remove
           - app.drey.Dialect
