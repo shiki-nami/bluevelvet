@@ -24,6 +24,7 @@ modules:
       - hid_apple.fnmode=2
       - systemd.zram=0
       - zswap.enabled=1
+      - zswap.shrinker_enabled=1
 
   # 添加字体
   - type: fonts
