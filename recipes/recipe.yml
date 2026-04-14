@@ -1,16 +1,16 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
+# 映像将发布到 ghcr.io/<user>/<name>
 name: bluevelvet
-# description will be included in the image's metadata
+# 描述信息将包含在映像的元数据中
 description: 这是我的个人系统映像
 
-# the base image to build on top of (FROM) and the version tag to use
+# 要构建的基础映像和要使用的版本标签
 base-image: ghcr.io/ublue-os/bazzite-deck-nvidia-gnome
-image-version: latest # latest is also supported if you want new updates ASAP
+image-version: latest
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
+# 模块配置，按顺序执行
+# 您可以包含同一模块的多个实例
 modules:
   # 添加系统配置
   - type: files
