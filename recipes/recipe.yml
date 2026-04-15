@@ -46,9 +46,6 @@ modules:
     configurations:
       - notify: true
         scope: system
-        repo:
-          name: flathub
-          url: https://mirrors.ustc.edu.cn/flathub
         install:
           - app.drey.Dialect
           - app.fotema.Fotema
