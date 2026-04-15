@@ -3,7 +3,7 @@
 要将现有的 Fedora Atomic 安装变基（rebase）到最新构建版本：
 - 首先变基到未签名的镜像，以安装正确的签名密钥和策略：
 ```bash
-rpm-ostree rebase ostree-unverified-registry:ghcr.nju.edu.cn/shiki-nami/bluevelvet:latest
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/shiki-nami/bluevelvet:latest
 ```
 - 重启以完成变基：
 ```bash
@@ -11,7 +11,7 @@ systemctl reboot
 ```
 - 然后像这样变基到已签名的镜像：
 ```bash
-rpm-ostree rebase ostree-image-signed:docker://ghcr.nju.edu.cn/shiki-nami/bluevelvet:latest
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/shiki-nami/bluevelvet:latest
 ```
 - 再次重启以完成安装：
 ```bash
@@ -23,5 +23,5 @@ systemctl reboot
 ## 验证
 这些镜像使用 [Sigstore](https://www.sigstore.dev/) 的 [cosign](https://github.com/sigstore/cosign) 进行签名。您可以通过从本仓库下载 `cosign.pub` 文件并运行以下命令来验证签名：
 ```bash
-cosign verify --key cosign.pub ghcr.nju.edu.cn/shiki-nami/bluevelvet
+cosign verify --key cosign.pub ghcr.io/shiki-nami/bluevelvet
 ```
