@@ -69,8 +69,6 @@ modules:
           - com.bitwarden.desktop
           - com.sidevesh.Luminance
           - net.trowell.typesetter
-          - org.qbittorrent.qBittorrent
-          - com.github.wwmm.easyeffects
           - io.github.totoshko88.RustConn
           - re.sonny.Tangram
           - com.github.johnfactotum.Foliate
