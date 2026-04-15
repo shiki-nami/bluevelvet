@@ -6,7 +6,7 @@ name: bluevelvet
 description: 这是我的个人系统映像
 
 # 要构建的基础映像和要使用的版本标签
-base-image: ghcr.io/ublue-os/bazzite-deck-nvidia-gnome
+base-image: ghcr.io/ublue-os/bazzite-dx-nvidia-gnome
 image-version: latest
 
 # 模块配置，按顺序执行
@@ -44,12 +44,12 @@ modules:
   # 通过 Flatpak 安装
   - type: default-flatpaks
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
+      - notify: true
         scope: system
         repo:
           name: flathub
           url: https://mirrors.ustc.edu.cn/flathub
-        install: # system flatpaks we want all users to have and not remove
+        install:
           - app.drey.Dialect
           - app.fotema.Fotema
           - info.febvre.Komikku
