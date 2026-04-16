@@ -47,6 +47,7 @@ modules:
       - notify: true
         scope: system
         install:
+          - page.tesk.Refine
           - app.drey.Dialect
           - app.fotema.Fotema
           - info.febvre.Komikku
@@ -69,6 +70,8 @@ modules:
           - io.github.totoshko88.RustConn
           - re.sonny.Tangram
           - com.github.johnfactotum.Foliate
+        remove:
+          - org.altlinux.Tuner
 
   # 添加 GNOME 扩展
   - type: gnome-extensions
