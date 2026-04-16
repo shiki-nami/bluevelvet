@@ -12,19 +12,6 @@ image-version: latest
 # 模块配置，按顺序执行
 # 您可以包含同一模块的多个实例
 modules:
-  # 添加系统配置
-  - type: files
-    files:
-      - source: system
-        destination: /
-
-  # 添加字体
-  - type: fonts
-    fonts:
-      url-fonts:
-        - name: 更纱黑体 UI SC
-          url: https://github.com/be5invis/Sarasa-Gothic/releases/download/v1.0.37/SarasaUiSC-TTF-1.0.37.7z
-
   # 通过 DNF 安装
   - type: dnf
     install:
@@ -32,6 +19,11 @@ modules:
         - uxplay
         - ibus-rime
         - https://github.com/xishang0128/sparkle/releases/download/1.26.3/sparkle-linux-1.26.3-x86_64.rpm
+
+  # 添加 GNOME 扩展
+  - type: gnome-extensions
+    install:
+      - UXPlay Control
 
   # 通过 Flatpak 安装
   - type: default-flatpaks
@@ -65,10 +57,11 @@ modules:
         remove:
           - org.altlinux.Tuner
 
-  # 添加 GNOME 扩展
-  - type: gnome-extensions
-    install:
-      - UXPlay Control
+  # 添加系统配置
+  - type: files
+    files:
+      - source: system
+        destination: /
 
   # 启用 systemd 服务
   - type: systemd
