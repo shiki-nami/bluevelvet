@@ -54,6 +54,7 @@ modules:
           - io.github.totoshko88.RustConn
           - re.sonny.Tangram
           - com.github.johnfactotum.Foliate
+          - io.github.vikdevelop.SaveDesktop
         remove:
           - org.altlinux.Tuner
 
