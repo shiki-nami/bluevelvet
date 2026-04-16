@@ -18,13 +18,6 @@ modules:
       - source: system
         destination: /
 
-  # 注入内核参数
-  - type: kargs
-    kargs:
-      - hid_apple.fnmode=2
-      - zswap.enabled=1
-      - zswap.shrinker_enabled=1
-
   # 添加字体
   - type: fonts
     fonts:
@@ -82,6 +75,14 @@ modules:
     system:
       enabled:
         - swapfile.service
+
+  # 注入内核参数
+  - type: kargs
+    kargs:
+      - hid_apple.fnmode=2
+      - systemd.zram=0
+      - zswap.enabled=1
+      - zswap.shrinker_enabled=1
 
   # 签名 OCI 镜像
   - type: signing
