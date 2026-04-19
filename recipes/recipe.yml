@@ -64,11 +64,5 @@ modules:
       - source: system
         destination: /
 
-  # 启用 systemd 服务
-  - type: systemd
-    system:
-      enabled:
-        - swapfile.service
-
   # 签名 OCI 镜像
   - type: signing
