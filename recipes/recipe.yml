@@ -51,7 +51,6 @@ modules:
           - io.github.Faugus.faugus-launcher
           - io.mpv.Mpv
           - com.gopeed.Gopeed
-          - com.bitwarden.desktop
           - com.sidevesh.Luminance
           - net.trowell.typesetter
           - io.github.totoshko88.RustConn
