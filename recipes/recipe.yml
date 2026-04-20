@@ -19,6 +19,9 @@ modules:
         - uxplay
         - ibus-rime
         - https://github.com/xishang0128/sparkle/releases/download/1.26.3/sparkle-linux-1.26.3-x86_64.rpm
+    remove:
+      packages:
+        - lutris.x86_64 
 
   # 添加 GNOME 扩展
   - type: gnome-extensions
@@ -55,14 +58,15 @@ modules:
           - re.sonny.Tangram
           - com.github.johnfactotum.Foliate
           - io.github.vikdevelop.SaveDesktop
-        remove:
-          - org.altlinux.Tuner
 
   # 添加系统配置
   - type: files
     files:
       - source: system
         destination: /
+
+  # 初始化initramfs
+  - type: initramfs
 
   # 签名 OCI 镜像
   - type: signing
