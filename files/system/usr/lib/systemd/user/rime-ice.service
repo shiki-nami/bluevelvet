@@ -1,0 +1,11 @@
+[Unit]
+Description=Update Rime Ice
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rime-ice.sh
+
+[Install]
+WantedBy=default.target

@@ -65,6 +65,12 @@ modules:
       - source: system
         destination: /
 
+  # 启用 systemd 服务
+  - type: systemd
+    user:
+      enabled:
+        - rime-ice.service
+
   # 初始化initramfs
   - type: initramfs
 
