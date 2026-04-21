@@ -57,6 +57,7 @@ modules:
           - re.sonny.Tangram
           - com.github.johnfactotum.Foliate
           - io.github.vikdevelop.SaveDesktop
+          - com.github.marhkb.Pods
 
   # 添加系统配置
   - type: files
