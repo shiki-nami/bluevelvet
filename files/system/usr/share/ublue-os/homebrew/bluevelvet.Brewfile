@@ -1,6 +1,5 @@
 brew "uv"
 brew "scc"
-brew "wasmer"
 brew "elan-init"
 brew "xlsclients"
 uv "ty"
