@@ -59,11 +59,17 @@ modules:
           - io.github.vikdevelop.SaveDesktop
           - com.github.marhkb.Pods
 
-  # 添加系统配置
+  # 添加系统文件
   - type: files
     files:
       - source: system
         destination: /
+
+  # 添加 just 脚本
+  - type: justfiles
+    validate: true
+    include:
+      - bluevelvet.just
 
   # 启用 systemd 服务
   - type: systemd
