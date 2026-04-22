@@ -3,7 +3,7 @@ install-brew:
     #!/bin/bash
     set -e
 
-    BREWFILE_PATH="usr/share/ublue-os/homebrew/bluevelvet.Brewfile"
+    BREWFILE_PATH="/usr/share/ublue-os/homebrew/bluevelvet.Brewfile"
 
     if [ ! -f "$BREWFILE_PATH" ]; then
         echo "错误: Brewfile 文件不存在: $BREWFILE_PATH"
