@@ -6,7 +6,7 @@ name: bluevelvet
 description: 这是我的个人系统映像
 
 # 要构建的基础映像和要使用的版本标签
-base-image: ghcr.io/ublue-os/bazzite-dx-nvidia-gnome
+base-image: ghcr.io/ublue-os/bazzite-gnome-nvidia-open
 image-version: latest
 
 # 模块配置，按顺序执行
