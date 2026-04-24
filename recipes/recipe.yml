@@ -21,7 +21,7 @@ modules:
         - https://github.com/xishang0128/sparkle/releases/download/1.26.3/sparkle-linux-1.26.3-x86_64.rpm
     remove:
       packages:
-        - lutris.x86_64 
+        - lutris.x86_64
 
   # 添加 GNOME 扩展
   - type: gnome-extensions
@@ -50,7 +50,6 @@ modules:
           - io.github.Faugus.faugus-launcher
           - io.mpv.Mpv
           - com.gopeed.Gopeed
-          - com.sidevesh.Luminance
           - net.trowell.typesetter
           - io.github.totoshko88.RustConn
           - com.github.johnfactotum.Foliate
