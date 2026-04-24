@@ -40,7 +40,6 @@ modules:
           - info.febvre.Komikku
           - it.mijorus.gearlever
           - org.zotero.Zotero
-          - org.gnome.Maps
           - org.gnome.Fractal
           - org.gnome.World.PikaBackup
           - org.localsend.localsend_app
@@ -54,7 +53,6 @@ modules:
           - com.sidevesh.Luminance
           - net.trowell.typesetter
           - io.github.totoshko88.RustConn
-          - re.sonny.Tangram
           - com.github.johnfactotum.Foliate
           - io.github.vikdevelop.SaveDesktop
           - com.github.marhkb.Pods
