@@ -72,7 +72,7 @@ modules:
   - type: systemd
     user:
       enabled:
-        - rime-frost.service
+        - rime-conf.service
 
   # 初始化initramfs
   - type: initramfs

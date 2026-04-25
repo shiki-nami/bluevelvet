@@ -1,11 +1,11 @@
 [Unit]
-Description=Update Rime Frost
+Description=Update Rime Config
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/rime-frost.sh
+ExecStart=/usr/bin/rime-conf.sh
 
 [Install]
 WantedBy=default.target
