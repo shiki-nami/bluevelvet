@@ -18,7 +18,7 @@ modules:
       packages:
         - uxplay
         - ibus-rime
-        - https://github.com/xishang0128/sparkle/releases/download/1.26.3/sparkle-linux-1.26.3-x86_64.rpm
+        - https://github.com/xishang0128/sparkle/releases/download/1.26.4/sparkle-linux-1.26.4-x86_64.rpm
     remove:
       packages:
         - lutris.x86_64
