@@ -9,5 +9,5 @@ if [ -d ".git" ]; then
     git pull
 else
     # 否则克隆
-    git clone --depth 1 https://github.com/iDvel/rime-ice .
+    git clone --depth 1 https://github.com/gaboolic/rime-frost .
 fi

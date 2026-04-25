@@ -1,11 +1,11 @@
 [Unit]
-Description=Update Rime Ice
+Description=Update Rime Frost
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/rime-ice.sh
+ExecStart=/usr/bin/rime-frost.sh
 
 [Install]
 WantedBy=default.target
