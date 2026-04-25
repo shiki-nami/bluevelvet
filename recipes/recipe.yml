@@ -55,6 +55,7 @@ modules:
           - com.github.johnfactotum.Foliate
           - io.github.vikdevelop.SaveDesktop
           - com.github.marhkb.Pods
+          - com.bitwarden.desktop
 
   # 添加系统文件
   - type: files
