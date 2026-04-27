@@ -11,3 +11,5 @@ else
     # 否则克隆
     git clone --depth 1 https://github.com/gaboolic/rime-frost .
 fi
+
+ibus restart
