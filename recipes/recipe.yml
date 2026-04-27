@@ -19,6 +19,8 @@ modules:
         - uxplay
         - ibus-rime
         - https://github.com/xishang0128/sparkle/releases/download/1.26.4/sparkle-linux-1.26.4-x86_64.rpm
+        - https://github.com/TickLabVN/biopass/releases/download/1.2.0/biopass-1.2.0-1.x86_64.rpm
+
     remove:
       packages:
         - lutris.x86_64
