@@ -69,12 +69,6 @@ modules:
     include:
       - bluevelvet.just
 
-  # 启用 systemd 服务
-  - type: systemd
-    user:
-      enabled:
-        - rime-conf.service
-
   # 初始化initramfs
   - type: initramfs
 
