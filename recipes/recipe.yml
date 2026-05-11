@@ -34,7 +34,6 @@ modules:
       - notify: true
         scope: system
         install:
-          - page.tesk.Refine
           - app.drey.Dialect
           - app.fotema.Fotema
           - info.febvre.Komikku
