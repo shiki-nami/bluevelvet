@@ -39,7 +39,6 @@ modules:
           - info.febvre.Komikku
           - it.mijorus.gearlever
           - org.zotero.Zotero
-          - org.gnome.Fractal
           - org.gnome.World.PikaBackup
           - org.localsend.localsend_app
           - io.github.flattool.Ignition
