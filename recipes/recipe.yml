@@ -38,7 +38,6 @@ modules:
           - app.fotema.Fotema
           - info.febvre.Komikku
           - it.mijorus.gearlever
-          - org.zotero.Zotero
           - org.gnome.World.PikaBackup
           - org.localsend.localsend_app
           - io.github.flattool.Ignition
