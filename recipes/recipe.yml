@@ -16,17 +16,11 @@ modules:
   - type: dnf
     install:
       packages:
-        - uxplay
         - ibus-rime
         - https://github.com/xishang0128/sparkle/releases/download/1.26.5/sparkle-linux-1.26.5-x86_64.rpm
     remove:
       packages:
         - lutris.x86_64
-
-  # 添加 GNOME 扩展
-  - type: gnome-extensions
-    install:
-      - UXPlay Control
 
   # 通过 Flatpak 安装
   - type: default-flatpaks
@@ -42,7 +36,6 @@ modules:
           - org.localsend.localsend_app
           - io.github.flattool.Ignition
           - io.github.Foldex.AdwSteamGtk
-          - io.github.IshuSinghSE.aurynk
           - io.github.ilya_zlobintsev.LACT
           - io.github.Faugus.faugus-launcher
           - io.mpv.Mpv
