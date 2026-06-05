@@ -1,6 +1,2 @@
 brew "uv"
-brew "scc"
-brew "elan-init"
 brew "xlsclients"
-uv "ty"
-uv "ruff"
