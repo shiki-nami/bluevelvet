@@ -12,10 +12,16 @@ image-version: latest
 # 模块配置，按顺序执行
 # 您可以包含同一模块的多个实例
 modules:
+  # 启用软件仓库
+  - type: script
+    scripts:
+      - enable-terra.sh
+
   # 通过 DNF 安装
   - type: dnf
     install:
       packages:
+        - ghostty
         - ibus-rime
         - https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.5.1/Clash.Verge-2.5.1-1.x86_64.rpm
     remove:
