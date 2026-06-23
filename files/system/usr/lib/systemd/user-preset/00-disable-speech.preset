@@ -1,2 +1,0 @@
-disable speech-dispatcher.service
-disable speech-dispatcher.socket
