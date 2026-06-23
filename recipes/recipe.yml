@@ -52,6 +52,9 @@ modules:
           - io.github.vikdevelop.SaveDesktop
           - com.github.marhkb.Pods
           - io.github.diegopvlk.Cine
+          - io.github.ungoogled_software.ungoogled_chromium
+        remove:
+          - org.mozilla.firefox
 
   # 添加系统文件
   - type: files
