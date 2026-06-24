@@ -53,6 +53,8 @@ modules:
           - com.github.marhkb.Pods
           - io.github.diegopvlk.Cine
           - io.github.ungoogled_software.ungoogled_chromium
+          - im.riot.Riot
+          - com.bitwarden.desktop
         remove:
           - org.mozilla.firefox
 
