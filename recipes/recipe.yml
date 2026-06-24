@@ -58,6 +58,12 @@ modules:
         remove:
           - org.mozilla.firefox
 
+  - type: gnome-extensions
+    install:
+      - PaperWM
+    remove:
+      - GSConnect
+
   # 添加系统文件
   - type: files
     files:
